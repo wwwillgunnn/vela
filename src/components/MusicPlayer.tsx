@@ -8,9 +8,15 @@ const TRACK = {
   artist: "The Refractions",
 };
 
-export default function MusicPlayer() {
+interface MusicPlayerProps {
+  onArtClick?: () => void;
+}
+
+export default function MusicPlayer({ onArtClick }: MusicPlayerProps) {
   const hostRef = useRef<HTMLDivElement>(null);
   const playingRef = useRef(false);
+  const onArtClickRef = useRef(onArtClick);
+  onArtClickRef.current = onArtClick;
 
   useEffect(() => {
     const host = hostRef.current;
@@ -33,6 +39,7 @@ export default function MusicPlayer() {
 
       const art = document.createElement("div");
       art.className = "player-art";
+      art.addEventListener("click", () => onArtClickRef.current?.());
 
       const meta = document.createElement("div");
       meta.className = "player-meta";
