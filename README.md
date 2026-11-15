@@ -10,6 +10,8 @@
 
 <p align="center">Play a song and watch the background come alive!</p>
 
+<img width="1038" height="645" alt="image" src="https://github.com/user-attachments/assets/96bc4122-73cf-4db1-8859-9d46c3447f98" />
+
 ---
 
 ## Tech
